@@ -1,0 +1,134 @@
+{
+  "domainId": "4",
+  "domainName": "Third-Party and Cloud Computing Cybersecurity",
+  "subdomains": [
+    {
+      "subdomainId": "4-1",
+      "subdomainName": "Third-Party Cybersecurity",
+      "objective": "To ensure the protection of assets against the cybersecurity risks related to third-parties including outsourcing and managed services as per organizational policies and procedures, and related laws and regulations.",
+      "controls": [
+        {
+          "controlId": "4-1-1",
+          "controlReferenceNumber": "4-1-1",
+          "controlClause": "Cybersecurity requirements for contracts and agreements with third-parties must be identified, documented and approved.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "4-1-2",
+          "controlReferenceNumber": "4-1-2",
+          "controlClause": "The cybersecurity requirements for contracts and agreements with third-parties (e.g., Service Level Agreement (SLA)) -which may affect, if impacted, the organization's data or services- must include at least the following:",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": "",
+          "subControls": [
+            {
+              "controlId": "4-1-2-1",
+              "controlClause": "Non-disclosure clauses and secure removal of organization’s data by third-parties upon end of service."
+            },
+            {
+              "controlId": "4-1-2-2",
+              "controlClause": "Communication procedures in case of cybersecurity incidents."
+            },
+            {
+              "controlId": "4-1-2-3",
+              "controlClause": "Requirements for third-parties to comply with related organizational policies and procedures, laws and regulations."
+            }
+          ]
+        },
+        {
+          "controlId": "4-1-3",
+          "controlReferenceNumber": "4-1-3",
+          "controlClause": "The cybersecurity requirements for contracts and agreements with IT outsourcing and managed services third-parties must include at least the following:",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": "",
+          "subControls": [
+            {
+              "controlId": "4-1-3-1",
+              "controlClause": "Conducting a cybersecurity risk assessment to ensure the availability of risk mitigation controls before signing contracts and agreements or upon changes in related regulatory requirements."
+            },
+            {
+              "controlId": "4-1-3-2",
+              "controlClause": "Cybersecurity managed services centers for monitoring and operations must be completely present inside the Kingdom of Saudi Arabia."
+            }
+          ]
+        },
+        {
+          "controlId": "4-1-4",
+          "controlReferenceNumber": "4-1-4",
+          "controlClause": "The cybersecurity requirements for contracts and agreements with third-parties must be reviewed periodically.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        }
+      ]
+    },
+    {
+      "subdomainId": "4-2",
+      "subdomainName": "Cloud Computing and Hosting Cybersecurity",
+      "objective": "To ensure the proper and efficient remediation of cyber risks and the implementation of cybersecurity requirements related to hosting and cloud computing as per organizational policies and procedures, and related laws and regulations. It is also to ensure the protection of the organization’s information and technology assets hosted on the cloud or processed/managed by third-parties.",
+      "controls": [
+        {
+          "controlId": "4-2-1",
+          "controlReferenceNumber": "4-2-1",
+          "controlClause": "Cybersecurity requirements related to the use of hosting and cloud computing services must be defined, documented and approved.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "4-2-2",
+          "controlReferenceNumber": "4-2-2",
+          "controlClause": "The cybersecurity requirements related to the use of hosting and cloud computing services must be implemented.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "4-2-3",
+          "controlReferenceNumber": "4-2-3",
+          "controlClause": "In line with related and applicable laws and regulations, and in addition to the applicable ECC controls from main domains (1), (2), (3) and subdomain (4.1), the cybersecurity requirements related to the use of hosting and cloud computing services must include at least the following:",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": "",
+          "subControls": [
+            {
+              "controlId": "4-2-3-1",
+              "controlClause": "Classification of data prior to hosting on cloud or hosting services and returning data (in a usable format) upon service completion."
+            },
+            {
+              "controlId": "4-2-3-2",
+              "controlClause": "Separation of organization’s environments (specifically virtual servers) from other environments hosted at the cloud service provider."
+            }
+          ]
+        },
+        {
+          "controlId": "4-2-4",
+          "controlReferenceNumber": "4-2-4",
+          "controlClause": "The cybersecurity requirements related to the use of hosting and cloud computing services must be reviewed periodically.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        }
+      ]
+    }
+  ]
+}

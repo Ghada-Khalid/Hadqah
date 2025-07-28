@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
+.env
+.env.*  # Optional, ignores .env.development etc.
+
+# OS-related
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Coverage and testing
+coverage/
+*.lcov
+
+# Optional lock files (depending on the package manager you're using)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Optional: skip .eslintcache and lint-staged cache

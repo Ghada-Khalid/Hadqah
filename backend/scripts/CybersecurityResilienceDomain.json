@@ -1,0 +1,86 @@
+{
+
+  "domainId": "3",
+  "domainName": "Cybersecurity Resilience",
+
+
+    "subdomains": [
+        {
+  "subdomainId": "3-1",
+  "subdomainName": "Cybersecurity Resilience Aspects of Business Continuity Management (BCM)",
+  "objective": "To ensure the inclusion of the cybersecurity resiliency requirements within the organization’s business continuity management and to remediate and minimize the impacts on systems, information processing facilities and critical e-services from disasters caused by cybersecurity incidents.",
+  "controls": [
+    {
+      "controlId": "3-1-1",
+      "controlReferenceNumber": "3-1-1",
+      "controlClause": "Cybersecurity requirements for business continuity management must be defined, documented and approved.",
+      "controlType": "Mandatory",
+      "complianceLevel": "",
+      "remarks": "",
+      "correctiveProcedures": "",
+      "expectedComplianceDate": ""
+    },
+    {
+      "controlId": "3-1-2",
+      "controlReferenceNumber": "3-1-2",
+      "controlClause": "The cybersecurity requirements for business continuity management must be implemented.",
+      "controlType": "Mandatory",
+      "complianceLevel": "",
+      "remarks": "",
+      "correctiveProcedures": "",
+      "expectedComplianceDate": ""
+    },
+    {
+      "controlId": "3-1-3",
+      "controlReferenceNumber": "3-1-3",
+      "controlClause": "The cybersecurity requirements for business continuity management must include at least the following:",
+      "controlType": "Mandatory",
+      "complianceLevel": "",
+      "remarks": "",
+      "correctiveProcedures": "",
+      "expectedComplianceDate": ""
+    },
+    {
+      "controlId": "3-1-3.1",
+      "controlReferenceNumber": "3-1-3.1",
+      "controlClause": "Ensuring the continuity of cybersecurity systems and procedures.",
+      "controlType": "Mandatory",
+      "complianceLevel": "",
+      "remarks": "",
+      "correctiveProcedures": "",
+      "expectedComplianceDate": ""
+    },
+    {
+      "controlId": "3-1-3.2",
+      "controlReferenceNumber": "3-1-3.2",
+      "controlClause": "Developing response plans for cybersecurity incidents that may affect the business continuity.",
+      "controlType": "Mandatory",
+      "complianceLevel": "",
+      "remarks": "",
+      "correctiveProcedures": "",
+      "expectedComplianceDate": ""
+    },
+    {
+      "controlId": "3-1-3.3",
+      "controlReferenceNumber": "3-1-3.3",
+      "controlClause": "Developing disaster recovery plans.",
+      "controlType": "Mandatory",
+      "complianceLevel": "",
+      "remarks": "",
+      "correctiveProcedures": "",
+      "expectedComplianceDate": ""
+    },
+    {
+      "controlId": "3-1-4",
+      "controlReferenceNumber": "3-1-4",
+      "controlClause": "The cybersecurity requirements for business continuity management must be reviewed periodically.",
+      "controlType": "Mandatory",
+      "complianceLevel": "",
+      "remarks": "",
+      "correctiveProcedures": "",
+      "expectedComplianceDate": ""
+    }
+  ]
+}
+]
+}
