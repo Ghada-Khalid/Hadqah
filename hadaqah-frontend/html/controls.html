@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECC Controls Database – Hadaqah</title>
+
+  <!-- Global styles & icons -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header & Navigation (copy-paste from index.html) -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="logo-text">
+          <h1>Hadaqah</h1>
+          <p>ECC-2:2024 Compliance Assistant</p>
+        </div>
+      </div>
+      <div class="user-info">
+        <span>Welcome, Admin</span>
+        <div class="user-avatar">A</div>
+        <i class="fas fa-cog cog-icon"></i>
+      </div>
+    </div>
+  </header>
+  <nav class="nav-container">
+    <div class="nav">
+      <a href="/index.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="/controls.html" class="nav-item active"><i class="fas fa-list-check"></i> ECC Controls</a>
+      <a href="/assessments.html" class="nav-item"><i class="fas fa-clipboard-check"></i> Assessments</a>
+      <a href="/gap.html" class="nav-item"><i class="fas fa-chart-gap"></i> Gap Analysis</a>
+      <a href="/reports.html" class="nav-item"><i class="fas fa-file-pdf"></i> Reports</a>
+      <a href="/resources.html" class="nav-item"><i class="fas fa-book"></i> Resources</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="header-info">
+      <h1>ECC Controls Database</h1>
+      <p>Browse and manage all ECC-2:2024 controls</p>
+    </div>
+    
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <main class="content-area">
+
+      <!-- Filters & Search Row -->
+      <div class="controls-filters">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input id="searchInput" type="text" class="search-input" placeholder="Search by reference, domain, or keyword...">
+        </div>
+        <div class="dropdown" id="domainDropdown">
+          <button class="dropdown-button">
+            <span id="domainButtonText">All Domains</span>
+            <span class="dropdown-arrow">▼</span>
+          </button>
+          <div class="dropdown-menu" id="domainMenu">
+            <div class="dropdown-item" data-value="">All Domains</div>
+          </div>
+        </div>
+        <div class="dropdown" id="statusDropdown">
+          <button class="dropdown-button">
+            <span id="statusButtonText">All Status</span>
+            <span class="dropdown-arrow">▼</span>
+          </button>
+          <div class="dropdown-menu" id="statusMenu">
+            <div class="dropdown-item" data-value="">All Status</div>
+            <div class="dropdown-item" data-value="implemented">Implemented</div>
+            <div class="dropdown-item" data-value="partially-implemented">Partially Implemented</div>
+            <div class="dropdown-item" data-value="not-implemented">Not Implemented</div>
+            <div class="dropdown-item" data-value="not-applicable">Not Applicable</div>
+            <div class="dropdown-item" data-value="not-assessed">Not Assessed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Table Section -->
+      <div class="controls-section">
+        <div class="controls-header">
+          <h2 class="controls-title">ECC Controls Database</h2>
+          <span class="controls-count" id="controlsCount">0 Controls</span>
+        </div>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Control Ref</th>
+                <th>Domain</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Last Updated</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="controlsTableBody"></tbody>
+          </table>
+        </div>
+        <div class="loading" id="loading">
+          <h3>Loading controls...</h3>
+        </div>
+        <div class="no-results" id="noResults" style="display:none;">
+          <h3>No controls found</h3>
+          <p>Adjust your filters above.</p>
+        </div>
+      </div>
+
+    </main>
+    <aside class="sidebar">
+      <!-- reuse Quick Actions or any sidebar widgets -->
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2024 Hadaqah - ECC-2:2024 Compliance Assistant.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECC-2:2024 Assessment – Hadaqah</title>
+
+  <!-- your global styles + FontAwesome -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <i class="fas fa-shield-alt logo-icon"></i>
+        <div class="logo-text">
+          <h1>Hadaqah</h1>
+          <p>ECC-2:2024 Compliance Assistant</p>
+        </div>
+      </div>
+      <div class="user-info">
+        <span>Welcome, Admin</span>
+        <div class="user-avatar">A</div>
+        <i class="fas fa-cog cog-icon"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="nav-container">
+    <div class="nav">
+      <a href="/index.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="/controls.html" class="nav-item"><i class="fas fa-list-check"></i> ECC Controls</a>
+      <a href="/assessments.html" class="nav-item active"><i class="fas fa-clipboard-check"></i> Assessments</a>
+      <a href="/gap.html" class="nav-item"><i class="fas fa-chart-gap"></i> Gap Analysis</a>
+      <a href="/reports.html" class="nav-item"><i class="fas fa-file-pdf"></i> Reports</a>
+      <a href="/resources.html" class="nav-item"><i class="fas fa-book"></i> Resources</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="header-info">
+      <h1>Assessment: <span id="assessmentName">Loading…</span></h1>
+      <p id="progressInfo">Loading assessment data…</p>
+    </div>
+    <div class="actions">
+<button class="save-btn"   onclick="updateAssessment()">Update Assessment</button>
+      <button class="save-btn" onclick="saveAssessment()">Save Assessment</button>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="main-container">
+    <div id="errorMessage" class="error" style="display:none;"></div>
+    <div id="loadingMessage" class="loading">Loading assessment controls…</div>
+
+    <div id="assessmentTable" class="assessment-table" style="display:none;">
+      <div class="table-header">
+        <div>Main Domain</div>
+        <div>Subdomain</div>
+        <div>Type</div>
+        <div>Ref #</div>
+        <div>Clauses</div>
+        <div>Compliance</div>
+        <div>Corrective</div>
+        <div>Remarks</div>
+        <div>Expected Date</div>
+      </div>
+      <div id="assessmentContent"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2024 Hadaqah – ECC-2:2024 Compliance Assistant</p>
+    </div>
+  </footer>
+  
+    <!-- data source -->
+  <script src="/scripts/Alldomains.js"></script>  <!-- يحتوي على window.alldomains -->
+  <!-- ثم كود العرض -->
+  <script src="/js/assessments.js"></script>
+
+</body>
+</html>

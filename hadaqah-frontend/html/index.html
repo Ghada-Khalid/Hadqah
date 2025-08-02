@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadaqah - ECC-2:2024 Compliance Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Hadaqah</h1>
+                    <p>ECC-2:2024 Compliance Assistant</p>
+                </div>
+            </div>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <div class="user-avatar">A</div>
+                <i class="fas fa-cog cog-icon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav">
+            <div class="nav-item active">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </div>
+           <div
+  class="nav-item"
+  style="cursor: pointer;"
+  onclick="window.location.href='/controls.html'"
+>
+  <i class="fas fa-list-check"></i>
+  ECC Controls
+</div>
+            <div class="nav-item">
+                <i class="fas fa-clipboard-check"></i>
+                Assessments
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-chart-gap"></i>
+                Gap Analysis
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-file-pdf"></i>
+                Reports
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-book"></i>
+                Resources
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+<div class="page-header">
+  <div class="header-info">
+    <h1>Compliance Dashboard</h1>
+    <p>Latest assessment: hjf – View your ECC‑2:2024 compliance results</p>
+  </div>
+  <button class="action-btn" onclick="loadDashboardData()">
+    <i class="fas fa-sync-alt"></i>
+    Refresh Data
+  </button>
+</div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+
+<!-- Assessment Results Container -->
+<section class="assessment-results">
+  <h3>Assessment Results</h3>
+  <p class="assessment-subtitle">
+    Real-time compliance status from your latest assessment:
+    <strong id="latest-assessment-name">—</strong>
+  </p>
+
+  <div class="stats-cards">
+    <div class="stat-card">
+      <div class="stat-header">
+        <div>
+          <div class="stat-value" id="total-controls">0</div>
+          <div class="stat-label">Total Controls</div>
+        </div>
+        <div class="stat-icon controls">
+          <i class="fas fa-cog"></i>
+        </div>
+      </div>
+      <div class="stat-meta">ECC‑2:2024 Controls</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <div>
+          <div class="stat-value" id="implemented-count">0</div>
+          <div class="stat-label">Implemented</div>
+          <div class="stat-meta" id="implemented-pct">0% of total</div>
+        </div>
+        <div class="stat-icon compliant">
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <div>
+          <div class="stat-value" id="partial-count">0</div>
+          <div class="stat-label">Partially Implemented</div>
+          <div class="stat-meta" id="partial-pct">0% of total</div>
+        </div>
+        <div class="stat-icon gaps">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-header">
+        <div>
+          <div class="stat-value" id="score-count">0%</div>
+          <div class="stat-label">Compliance Score</div>
+          <div class="stat-meta">Overall compliance rate</div>
+        </div>
+        <div class="stat-icon critical">
+          <i class="fas fa-chart-line"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts-row">
+    <div class="chart-card">
+      <h4>Overall Compliance Status</h4>
+      <canvas id="overall-pie-chart"></canvas>
+    </div>
+    <div class="chart-card">
+      <h4>Domain Comparison</h4>
+      <canvas id="domain-bar-chart"></canvas>
+    </div>
+  </div>
+
+  <div class="domain-cards-grid" id="domain-cards">
+    <!-- domain cards injected by JS -->
+  </div>
+</section>
+            
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          
+            <!-- Quick Actions -->
+<div class="quick-actions">
+  <h3>
+    <i class="fas fa-bolt"></i>
+    Quick Actions
+  </h3>
+  <button class="action-btn" type="button"
+          onclick="window.location.href='/assessments.html'">
+    <i class="fas fa-plus"></i>
+    New Assessment
+  </button>
+  <button class="action-btn" type="button"
+          onclick="window.location.href='/assessments.html'">
+    <i class="fas fa-edit"></i>
+    Update Assessment
+  </button>
+</div>
+
+
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h3 class="recent-activity-title">
+                    <i class="fas fa-clock"></i>
+                    Recent Activity
+                </h3>
+                
+                <div class="activity-item">
+                    <div class="activity-icon assessment">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Assessment completed for Access Control</div>
+                        <div class="activity-time">2 hours ago</div>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon gap">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">3 new gaps identified in Physical Security</div>
+                        <div class="activity-time">5 hours ago</div>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon report">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">Monthly compliance report generated</div>
+                        <div class="activity-time">1 day ago</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Hadaqah</h4>
+                <a href="#">ECC-2:2024 Framework</a>
+                <a href="#">User Guide</a>
+                <a href="#">API Documentation</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Support</a>
+                <a href="#">Training Resources</a>
+                <a href="#">Community Forum</a>
+            </div>
+            <div class="footer-section">
+                <h4>Compliance</h4>
+                <a href="#">NCA Guidelines</a>
+                <a href="#">Best Practices</a>
+                <a href="#">Audit Preparation</a>
+                <a href="#">Certification</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Hadaqah - ECC-2:2024 Compliance Assistant. Built for Saudi Arabia's Cybersecurity Framework.</p>
+        </div>
+    </footer>
+<script src="js/main.js"></script>
+
+
+
+</body>
+</html>
