@@ -47,13 +47,31 @@
   <div class="page-header">
     <div class="header-info">
       <h1>Assessment: <span id="assessmentName">Loading…</span></h1>
-      <p id="progressInfo">Loading assessment data…</p>
-    </div>
+<!-- REAL-TIME PROGRESS -->
+<section id="assessment-progress" style="margin:1rem 0">
+  <p id="progress-text">
+    0 of <span id="progress-total">127</span> controls completed (<span id="progress-percent">0%</span>)
+  </p>
+  <div class="progress-container">
+    <div id="progress-bar" class="progress-bar"></div>
+  </div>
+</section>
+
+</div>
     <div class="actions">
-<button class="save-btn"   onclick="updateAssessment()">Update Assessment</button>
-      <button class="save-btn" onclick="saveAssessment()">Save Assessment</button>
+<button
+  id="saveBtn"
+  class="save-btn"
+  onclick="saveAssessment()"
+  disabled
+>
+  Save 0 Assessments
+</button>
+
     </div>
   </div>
+
+
 
   <!-- MAIN -->
   <main class="main-container">
@@ -83,10 +101,7 @@
     </div>
   </footer>
   
-    <!-- data source -->
-  <script src="/scripts/Alldomains.js"></script>  <!-- يحتوي على window.alldomains -->
-  <!-- ثم كود العرض -->
-  <script src="/js/assessments.js"></script>
+<script src="/js/assessments.js"></script>
 
 </body>
 </html>

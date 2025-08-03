@@ -684,3 +684,66 @@ function openAssessmentModal(controlId) {
 document.addEventListener('DOMContentLoaded', loadAllData);
 
 // --------------------------------
+
+// Fetch overall stats and per-domain stats, then paint them into your DOM.
+  async function loadDashboard() {
+    try {
+      // 1) get the latest session
+      const sess = await fetch('/api/assessment-sessions');
+      const sessions = await sess.json();
+      if (!sessions.length) return;
+      const latest = sessions[sessions.length - 1];
+
+      // 2) get overall stats
+      const statsRes = await fetch('/api/assessments/stats');
+      const stats    = await statsRes.json();
+      // e.g. { implemented:39, partiallyImplemented:12, notImplemented:5, notApplicable:3 }
+
+      // 3) get per-domain breakdown
+      const domRes  = await fetch('/api/assessments/domain-stats');
+      const domains = await domRes.json();
+      // e.g. [ { domainId:1, domainName:"Cybersecurity Governance", implemented:20, total:29 }, … ]
+
+      // 4) update your widgets
+      document.getElementById('implemented-count').textContent = stats.implemented;
+      document.getElementById('partial-count').textContent     = stats.partiallyImplemented;
+      document.getElementById('missing-count').textContent     = stats.notImplemented;
+      document.getElementById('na-count').textContent          = stats.notApplicable;
+      document.getElementById('overall-pct').textContent       =
+        Math.round((stats.implemented / (stats.implemented + stats.partiallyImplemented + stats.notImplemented + stats.notApplicable)) * 100) + '%';
+
+      // 5) update each domain card
+      domains.forEach(d => {
+        const pct = d.total ? Math.round((d.implemented / d.total) * 100) : 0;
+        const card = document.querySelector(`#domain-card-${d.domainId}`);
+        if (!card) return;
+        card.querySelector('.domain-completed').textContent = d.implemented;
+        card.querySelector('.domain-total').textContent     = d.total;
+        card.querySelector('.domain-pct').textContent       = pct + '%';
+        card.querySelector('.domain-bar').style.width       = pct + '%';
+      });
+
+    } catch (err) {
+      console.error('Dashboard load error', err);
+    }
+  }
+
+
+  // After your loadDashboard() definition…
+
+window.addEventListener('load', () => {
+  loadDashboardData();
+  loadAssessmentResults();    // ← make sure this runs on load
+});
+
+// And if you still want a “Refresh” button:
+document.querySelector('.action-btn i.fa-sync-alt')
+  .closest('button')
+  .addEventListener('click', () => {
+    loadDashboardData();
+    loadAssessmentResults();
+  });
+
+
+  // run on page load
+  document.addEventListener('DOMContentLoaded', loadDashboard);

@@ -1,902 +1,175 @@
-window.alldomains = {
-  "domainId": "1",
-  "domainName": "Cybersecurity Governance",
-  "subdomains": [
-    {
-      "subdomainId": "1-1",
-      "subdomainName": "Cybersecurity Strategy",
-      "objective": "To ensure that cybersecurity plans, goals, initiatives and projects are contributing to compliance with related laws and regulations.",
-      "controls": [
-        {
-          "controlId": "1-1-1",
-          "controlClause": "A cybersecurity strategy must be defined, documented and approved. It must be supported by the head of the organization or his/her delegate (referred to in this document as Authorizing Official). The strategy goals must be in-line with related laws and regulations.",
-          "controlReferenceNumber": "1-1-1",
-          "controlType": "Mandatory",
-          "complianceLevel": "",
-          "remarks": "",
-          "correctiveProcedures": "",
-          "expectedComplianceDate": ""
-        },
-        {
-          "controlId": "1-1-2",
-          "controlClause": "A roadmap must be executed to implement the cybersecurity strategy.",
-          "controlReferenceNumber": "1-1-2",
-          "controlType": "Mandatory",
-          "complianceLevel": "",
-          "remarks": "",
-          "correctiveProcedures": "",
-          "expectedComplianceDate": ""
-        },
-        {
-          "controlId": "1-1-3",
-          "controlClause": "The cybersecurity strategy must be reviewed periodically according to planned intervals or upon changes to related laws and regulations.",
-          "controlReferenceNumber": "1-1-3",
-          "controlType": "Mandatory",
-          "complianceLevel": "",
-          "remarks": "",
-          "correctiveProcedures": "",
-          "expectedComplianceDate": ""
-        }
-        
-      ]
-    },
+// /scripts/Alldomains.js
+
+window.alldomains = [
+  {
+    domainId: "1",
+    domainName: "Cybersecurity Governance",
+    subdomains: [
+      {
+        subdomainId: "1-1",
+        subdomainName: "Cybersecurity Strategy",
+        objective: "To ensure that cybersecurity plans, goals, initiatives and projects are contributing to compliance with related laws and regulations.",
+        controls: [
+          { controlId: "1-1-1", controlClause: "A cybersecurity strategy must be defined, documented and approved. It must be supported by the head of the organization or his/her delegate (referred to in this document as Authorizing Official). The strategy goals must be in-line with related laws and regulations.", controlReferenceNumber: "1-1-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-1-2", controlClause: "A roadmap must be executed to implement the cybersecurity strategy.", controlReferenceNumber: "1-1-2", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-1-3", controlClause: "The cybersecurity strategy must be reviewed periodically according to planned intervals or upon changes to related laws and regulations.", controlReferenceNumber: "1-1-3", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-2",
+        subdomainName: "Cybersecurity Management",
+        objective: "To ensure Authorizing Official’s support in implementing and managing cybersecurity programs within the organization as per related laws and regulations",
+        controls: [
+          { controlId: "1-2-1", controlClause: "A dedicated cybersecurity function (e.g., division, department) must be established within the organization. This function must be independent from the Information Technology/Information Communication and Technology (IT/ICT) functions (as per the Royal Decree number 37140 dated 14/8/1438H). It is highly recommended that this cybersecurity function reports directly to the head of the organization or his/her delegate while ensuring that this does not result in a conflict of interest.", controlReferenceNumber: "1-2-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-2-2", controlClause: "All cybersecurity positions must be filled with full-time and qualified Saudi cybersecurity professionals.", controlReferenceNumber: "1-2-2", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-2-3", controlClause: "A cybersecurity steering committee must be established by the Authorizing Official to ensure the support and implementation of the cybersecurity programs and initiatives within the organization. Committee members, roles and responsibilities, and governance framework must be defined, documented and approved. The committee must include the head of the cybersecurity function as one of its members. It is highly recommended that the committee reports directly to the head of the organization or his/her delegate while ensuring that this does not result in a conflict of interest.", controlReferenceNumber: "1-2-3", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-3",
+        subdomainName: "Cybersecurity Policies and Procedures",
+        objective: "To ensure that cybersecurity requirements are documented, communicated and complied with by the organization as per related laws and regulations, and organizational requirements.",
+        controls: [
+          { controlId: "1-3-1", controlClause: "Cybersecurity policies and procedures must be defined and documented by the cybersecurity function, approved by the Authorizing Official, and disseminated to relevant parties inside and outside the organization.", controlReferenceNumber: "1-3-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-3-2", controlClause: "The cybersecurity function must ensure that the cybersecurity policies and procedures are implemented.", controlReferenceNumber: "1-3-2", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-3-3", controlClause: "The cybersecurity policies and procedures must be supported by technical security standards (e.g., operating systems, databases and firewall technical security standards).", controlReferenceNumber: "1-3-3", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-3-4", controlClause: "The cybersecurity policies and procedures must be reviewed periodically according to planned intervals or upon changes to related laws and regulations. Changes and reviews must be approved and documented.", controlReferenceNumber: "1-3-4", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-4",
+        subdomainName: "Cybersecurity Roles and Responsibilities",
+        objective: "To ensure that roles and responsibilities are defined for all parties participating in implementing the cybersecurity controls within the organization.",
+        controls: [
+          { controlId: "1-4-1", controlClause: "Cybersecurity organizational structure and related roles and responsibilities must be defined, documented, approved, supported and assigned by the Authorizing Official, while ensuring that this does not result in a conflict of interest.", controlReferenceNumber: "1-4-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-4-2", controlClause: "The cybersecurity roles and responsibilities must be reviewed periodically according to planned intervals or upon changes to related laws and regulations.", controlReferenceNumber: "1-4-2", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-5",
+        subdomainName: "Cybersecurity Risk Management",
+        objective: "To ensure managing cybersecurity risks in a methodological approach in order to protect the organization’s information and technology assets as per organizational policies and procedures, and related laws and regulations.",
+        controls: [
+          { controlId: "1-5-1", controlClause: "Cybersecurity risk management methodology and procedures must be defined, documented and approved as per confidentiality, integrity and availability considerations of information and technology assets.", controlReferenceNumber: "1-5-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-5-2", controlClause: "The cybersecurity risk management methodology and procedures must be implemented by the cybersecurity function.", controlReferenceNumber: "1-5-2", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-6",
+        subdomainName: "Cybersecurity in Information and Technology Project Management",
+        objective: "To ensure that cybersecurity requirements are included in project management methodology and procedures in order to protect the confidentiality, integrity and availability of information and technology assets as per organization policies and procedures, and related laws and regulations.",
+        controls: [
+          { controlId: "1-6-1", controlClause: "Cybersecurity requirements must be included in project and asset (information/technology) change management methodology and procedures to identify and manage cybersecurity risks as part of project management lifecycle. The cybersecurity requirements must be a key part of the overall requirements of technology projects.", controlReferenceNumber: "1-6-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-7",
+        subdomainName: "Compliance with Cybersecurity Standards, Laws and Regulations",
+        objective: "To ensure that the organization’s cybersecurity program is in compliance with related laws and regulations.",
+        controls: [
+          { controlId: "1-7-1", controlClause: "The organization must comply with related national cybersecurity laws and regulations.", controlReferenceNumber: "1-7-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-8",
+        subdomainName: "Periodical Cybersecurity Review and Audit",
+        objective: "To ensure that cybersecurity controls are implemented and in compliance with organizational policies and procedures, as well as related national and international laws, regulations and agreements.",
+        controls: [
+          { controlId: "1-8-1", controlReferenceNumber: "1-8-1", controlType: "Mandatory", controlClause: "Cybersecurity reviews must be conducted periodically by the cybersecurity function in the organization to assess the compliance with the cybersecurity controls in the organization.", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-9",
+        subdomainName: "Cybersecurity in Human Resources",
+        objective: "To ensure that cybersecurity risks and requirements related to personnel (employees and contractors) are managed efficiently prior to employment, during employment and after termination/separation as per organizational policies and procedures, and related laws and regulations.",
+        controls: [
+          { controlId: "1-9-1", controlClause: "Personnel cybersecurity requirements (prior to employment, during employment and after termination/separation) must be defined, documented and approved.", controlReferenceNumber: "1-9-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "1-10",
+        subdomainName: "Cybersecurity Awareness and Training Program",
+        objective: "To ensure that personnel are aware of their cybersecurity responsibilities and have the essential cybersecurity awareness. It is also to ensure that personnel are provided with the required cybersecurity training, skills and credentials needed to accomplish their cybersecurity responsibilities and to protect the organization’s information and technology assets.",
+        controls: [
+          { controlId: "1-10-1", controlClause: "A cybersecurity awareness program must be developed and approved. The program must be conducted periodically through multiple channels to strengthen the awareness about cybersecurity, cyber threats and risks, and to build a positive cybersecurity awareness culture.", controlReferenceNumber: "1-10-1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-2", controlClause: "The cybersecurity awareness program must be implemented.", controlReferenceNumber: "1-10-2", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-3.1", controlClause: "Secure handling of email services, especially phishing emails.", controlReferenceNumber: "1-10-3.1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-3.2", controlClause: "Secure handling of mobile devices and storage media.", controlReferenceNumber: "1-10-3.2", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-3.3", controlClause: "Secure Internet browsing.", controlReferenceNumber: "1-10-3.3", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-3.4", controlClause: "Secure use of social media.", controlReferenceNumber: "1-10-3.4", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-4.1", controlClause: "Cybersecurity function’s personnel must receive essential and customized (i.e., tailored to job functions as it relates to cybersecurity) training and access to professional skillsets.", controlReferenceNumber: "1-10-4.1", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-4.2", controlClause: "Personnel working on software/application development and information and technology assets operations must receive essential and customized cybersecurity training.", controlReferenceNumber: "1-10-4.2", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-4.3", controlClause: "Executive and supervisory positions must receive essential and customized cybersecurity training.", controlReferenceNumber: "1-10-4.3", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "1-10-5", controlClause: "The implementation of the cybersecurity awareness program must be reviewed periodically.", controlReferenceNumber: "1-10-5", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      }
+    ]
+  }
+
+  // ,{ domainId: "2", domainName: "...", subdomains: [...] }
+  
+  ,
+  {
+    domainId: "2",
+    domainName: "Cybersecurity Defense",
+    subdomains: [
+      {
+        subdomainId: "2-1",
+        subdomainName: "Asset Management",
+        objective: "To ensure that the organization has an accurate and detailed inventory of information and technology assets in order to support the organization’s cybersecurity and operational requirements to maintain the confidentiality, integrity and availability of information and technology assets.",
+        controls: [
+          { controlId: "2-1-1", controlReferenceNumber: "2-1-1", controlClause: "Cybersecurity requirements for managing information and technology assets must be defined, documented and approved.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-1-2", controlReferenceNumber: "2-1-2", controlClause: "The cybersecurity requirements for managing information and technology assets must be implemented.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-1-3", controlReferenceNumber: "2-1-3", controlClause: "Acceptable use policy of information and technology assets must be defined, documented and approved.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-1-4", controlReferenceNumber: "2-1-4", controlClause: "Acceptable use policy of information and technology assets must be implemented.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-1-5", controlReferenceNumber: "2-1-5", controlClause: "Information and technology assets must be classified, labeled and handled as per related law and regulatory requirements.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-1-6", controlReferenceNumber: "2-1-6", controlClause: "The cybersecurity requirements for managing information and technology assets must be reviewed periodically.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "2-2",
+        subdomainName: "Identity and Access Management",
+        objective: "To ensure the secure and restricted logical access to information and technology assets in order to prevent unauthorized access and allow only authorized accesses for users which are necessary to accomplish assigned tasks.",
+        controls: [
+          { controlId: "2-2-1", controlReferenceNumber: "2-2-1", controlClause: "Cybersecurity requirements for identity and access management must be defined, documented and approved.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-2-2", controlReferenceNumber: "2-2-2", controlClause: "The cybersecurity requirements for identity and access management must be implemented.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-2-3.1", controlReferenceNumber: "2-2-3.1", controlClause: "Single-factor authentication based on username and password.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-2-3.2", controlReferenceNumber: "2-2-3.2", controlClause: "Multi-factor authentication for remote access, defining suitable authentication factors, number of factors and suitable technique based on the result of impact assessment of authentication failure and bypass for remote access.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-2-3.3", controlReferenceNumber: "2-2-3.3", controlClause: "User authorization based on identity and access control principles: Need-to-Know and Need-to-Use, Least Privilege and Segregation of Duties.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-2-3.4", controlReferenceNumber: "2-2-3.4", controlClause: "Privileged access management.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-2-3.5", controlReferenceNumber: "2-2-3.5", controlClause: "Periodic review of users’ identities and access rights.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-2-4", controlReferenceNumber: "2-2-4", controlClause: "The implementation of the cybersecurity requirements for identity and access management must be reviewed periodically.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      }, 
 {
-  "subdomainId": "1-2",
-  "subdomainName": "Cybersecurity Management",
-  "objective": "To ensure Authorizing Official’s support in implementing and managing cybersecurity programs within the organization as per related laws and regulations",
-  "controls": [
-    {
-      "controlId": "1-2-1",
-      "controlClause": "A dedicated cybersecurity function (e.g., division, department) must be established within the organization. This function must be independent from the Information Technology/Information Communication and Technology (IT/ICT) functions (as per the Royal Decree number 37140 dated 14/8/1438H). It is highly recommended that this cybersecurity function reports directly to the head of the organization or his/her delegate while ensuring that this does not result in a conflict of interest.",
-      "controlReferenceNumber": "1-2-1",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-2-2",
-      "controlClause": "All cybersecurity positions must be filled with full-time and qualified Saudi cybersecurity professionals.",
-      "controlReferenceNumber": "1-2-2",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-2-3",
-      "controlClause": "A cybersecurity steering committee must be established by the Authorizing Official to ensure the support and implementation of the cybersecurity programs and initiatives within the organization. Committee members, roles and responsibilities, and governance framework must be defined, documented and approved. The committee must include the head of the cybersecurity function as one of its members. It is highly recommended that the committee reports directly to the head of the organization or his/her delegate while ensuring that this does not result in a conflict of interest.",
-      "controlReferenceNumber": "1-2-3",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-
-
-}
-
-,
-
-
-{
-  "subdomainId": "1-3",
-  "subdomainName": "Cybersecurity Policies and Procedures",
-  "objective": "To ensure that cybersecurity requirements are documented, communicated and complied with by the organization as per related laws and regulations, and organizational requirements.",
-  "controls": [
-    {
-      "controlId": "1-3-1",
-      "controlClause": "Cybersecurity policies and procedures must be defined and documented by the cybersecurity function, approved by the Authorizing Official, and disseminated to relevant parties inside and outside the organization.",
-      "controlReferenceNumber": "1-3-1",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-3-2",
-      "controlClause": "The cybersecurity function must ensure that the cybersecurity policies and procedures are implemented.",
-      "controlReferenceNumber": "1-3-2",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-3-3",
-      "controlClause": "The cybersecurity policies and procedures must be supported by technical security standards (e.g., operating systems, databases and firewall technical security standards).",
-      "controlReferenceNumber": "1-3-3",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-3-4",
-      "controlClause": "The cybersecurity policies and procedures must be reviewed periodically according to planned intervals or upon changes to related laws and regulations. Changes and reviews must be approved and documented.",
-      "controlReferenceNumber": "1-3-4",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-
-,
-
-{
-  "subdomainId": "1-4",
-  "subdomainName": "Cybersecurity Roles and Responsibilities",
-  "objective": "To ensure that roles and responsibilities are defined for all parties participating in implementing the cybersecurity controls within the organization.",
-  "controls": [
-    {
-      "controlId": "1-4-1",
-      "controlClause": "Cybersecurity organizational structure and related roles and responsibilities must be defined, documented, approved, supported and assigned by the Authorizing Official, while ensuring that this does not result in a conflict of interest.",
-      "controlReferenceNumber": "1-4-1",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-4-2",
-      "controlClause": "The cybersecurity roles and responsibilities must be reviewed periodically according to planned intervals or upon changes to related laws and regulations.",
-      "controlReferenceNumber": "1-4-2",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-,
-{
-  "subdomainId": "1-5",
-  "subdomainName": "Cybersecurity Risk Management",
-  "objective": "To ensure managing cybersecurity risks in a methodological approach in order to protect the organization’s information and technology assets as per organizational policies and procedures, and related laws and regulations.",
-  "controls": [
-    {
-      "controlId": "1-5-1",
-      "controlClause": "Cybersecurity risk management methodology and procedures must be defined, documented and approved as per confidentiality, integrity and availability considerations of information and technology assets.",
-      "controlReferenceNumber": "1-5-1",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-5-2",
-      "controlClause": "The cybersecurity risk management methodology and procedures must be implemented by the cybersecurity function.",
-      "controlReferenceNumber": "1-5-2",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-5-3.1",
-      "controlClause": "Cybersecurity risk assessment must be performed in the early stages of technology projects.",
-      "controlReferenceNumber": "1-5-3.1",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-5-3.2",
-      "controlClause": "Cybersecurity risk assessment must be performed before making major changes to technology infrastructure.",
-      "controlReferenceNumber": "1-5-3.2",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-5-3.3",
-      "controlClause": "Cybersecurity risk assessment must be performed during the planning phase of obtaining third-party services.",
-      "controlReferenceNumber": "1-5-3.3",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-5-3.4",
-      "controlClause": "Cybersecurity risk assessment must be performed during the planning phase and before going live for new technology services and products.",
-      "controlReferenceNumber": "1-5-3.4",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-5-4",
-      "controlClause": "The cybersecurity risk management methodology and procedures must be reviewed periodically according to planned intervals or upon changes to related laws and regulations. Changes and reviews must be approved and documented.",
-      "controlReferenceNumber": "1-5-4",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-
-,
-
-{
-  "subdomainId": "1-6",
-  "subdomainName": "Cybersecurity in Information and Technology Project Management",
-  "objective": "To ensure that cybersecurity requirements are included in project management methodology and procedures in order to protect the confidentiality, integrity and availability of information and technology assets as per organization policies and procedures, and related laws and regulations.",
-  "controls": [
-    {
-      "controlId": "1-6-1",
-      "controlClause": "Cybersecurity requirements must be included in project and asset (information/technology) change management methodology and procedures to identify and manage cybersecurity risks as part of project management lifecycle. The cybersecurity requirements must be a key part of the overall requirements of technology projects.",
-      "controlReferenceNumber": "1-6-1",
-      "controlType": "Mandatory",
-      "subControls": [],
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-6-2",
-      "controlClause": "The cybersecurity requirements in project and assets (information/technology) change management must include at least the following:",
-      "controlReferenceNumber": "1-6-2",
-      "controlType": "Mandatory",
-      "subControls": [
-        {
-          "subControlId": "1-6-2.1",
-          "subControlClause": "Vulnerability assessment and remediation."
-        },
-        {
-          "subControlId": "1-6-2.2",
-          "subControlClause": "Conducting a configurations’ review, secure configuration and hardening and patching before changes or going live for technology projects."
-        }
-      ],
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-6-3",
-      "controlClause": "The cybersecurity requirements related to software and application development projects must include at least the following:",
-      "controlReferenceNumber": "1-6-3",
-      "controlType": "Mandatory",
-      "subControls": [
-        {
-          "subControlId": "1-6-3.1",
-          "subControlClause": "Using secure coding standards."
-        },
-        {
-          "subControlId": "1-6-3.2",
-          "subControlClause": "Using trusted and licensed sources for software development tools and libraries."
-        },
-        {
-          "subControlId": "1-6-3.3",
-          "subControlClause": "Conducting compliance test for software against the defined organizational cybersecurity requirements."
-        },
-        {
-          "subControlId": "1-6-3.4",
-          "subControlClause": "Secure integration between software components."
-        },
-        {
-          "subControlId": "1-6-3.5",
-          "subControlClause": "Conducting a configurations’ review, secure configuration and hardening and patching before going live for software products."
-        }
-      ],
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-6-4",
-      "controlClause": "The cybersecurity requirements in project management must be reviewed periodically.",
-      "controlReferenceNumber": "1-6-4",
-      "controlType": "Mandatory",
-      "subControls": [],
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-
-,
-
-
-{
-  "subdomainId": "1-7",
-  "subdomainName": "Compliance with Cybersecurity Standards, Laws and Regulations",
-  "objective": "To ensure that the organization’s cybersecurity program is in compliance with related laws and regulations.",
-  "controls": [
-    {
-      "controlId": "1-7-1",
-      "controlClause": "The organization must comply with related national cybersecurity laws and regulations.",
-      "controlReferenceNumber": "1-7-1",
-      "controlType": "Mandatory",
-      "subControls": [],
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-7-2",
-      "controlClause": "The organization must comply with any nationally-approved international agreements and commitments related to cybersecurity.",
-      "controlReferenceNumber": "1-7-2",
-      "controlType": "Mandatory",
-      "subControls": [],
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-, 
-
-{
-  "subdomainId": "1-8",
-  "subdomainName": "Periodical Cybersecurity Review and Audit",
-  "objective": "To ensure that cybersecurity controls are implemented and in compliance with organizational policies and procedures, as well as related national and international laws, regulations and agreements.",
-  "controls": [
-    {
-      "controlId": "1-8-1",
-      "controlReferenceNumber": "1-8-1",
-      "controlType": "Mandatory",
-      "controlClause": "Cybersecurity reviews must be conducted periodically by the cybersecurity function in the organization to assess the compliance with the cybersecurity controls in the organization.",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-8-2",
-      "controlReferenceNumber": "1-8-2",
-      "controlType": "Mandatory",
-      "controlClause": "Cybersecurity audits and reviews must be conducted by independent parties outside the cybersecurity function (e.g., Internal Audit function) to assess the compliance with the cybersecurity controls in the organization. Audits and reviews must be conducted independently, while ensuring that this does not result in a conflict of interest, as per the Generally Accepted Auditing Standards (GAAS), and related laws and regulations.",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-8-3",
-      "controlReferenceNumber": "1-8-3",
-      "controlType": "Mandatory",
-      "controlClause": "Results from the cybersecurity audits and reviews must be documented and presented to the cybersecurity steering committee and Authorizing Official. Results must include the audit/review scope, observations, recommendations and remediation plans.",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-, 
-
-{
-  "subdomainId": "1-9",
-  "subdomainName": "Cybersecurity in Human Resources",
-  "objective": "To ensure that cybersecurity risks and requirements related to personnel (employees and contractors) are managed efficiently prior to employment, during employment and after termination/separation as per organizational policies and procedures, and related laws and regulations.",
-  "controls": [
-    {
-      "controlId": "1-9-1",
-      "controlClause": "Personnel cybersecurity requirements (prior to employment, during employment and after termination/separation) must be defined, documented and approved.",
-      "controlType": "Mandatory",
-      "subcontrols": []
-    },
-    {
-      "controlId": "1-9-2",
-      "controlClause": "The personnel cybersecurity requirements must be implemented.",
-      "controlType": "Mandatory",
-      "subcontrols": []
-    },
-    {
-      "controlId": "1-9-3",
-      "controlClause": "The personnel cybersecurity requirements prior to employment must include at least the following:",
-      "controlType": "Mandatory",
-      "subcontrols": [
-        {
-          "subcontrolId": "1-9-3-1",
-          "subcontrolClause": "Inclusion of personnel cybersecurity responsibilities and non-disclosure clauses (covering the cybersecurity requirements during employment and after termination/separation) in employment contracts."
-        },
-        {
-          "subcontrolId": "1-9-3-2",
-          "subcontrolClause": "Screening or vetting candidates of cybersecurity and critical/privileged positions."
-        }
-      ]
-    },
-    {
-      "controlId": "1-9-4",
-      "controlClause": "The personnel cybersecurity requirements during employment must include at least the following:",
-      "controlType": "Mandatory",
-      "subcontrols": [
-        {
-          "subcontrolId": "1-9-4-1",
-          "subcontrolClause": "Cybersecurity awareness (during on-boarding and during employment)."
-        },
-        {
-          "subcontrolId": "1-9-4-2",
-          "subcontrolClause": "Implementation of and compliance with the cybersecurity requirements as per the organizational cybersecurity policies and procedures."
-        }
-      ]
-    },
-    {
-      "controlId": "1-9-5",
-      "controlClause": "Personnel access to information and technology assets must be reviewed and removed immediately upon termination/separation.",
-      "controlType": "Mandatory",
-      "subcontrols": []
-    },
-    {
-      "controlId": "1-9-6",
-      "controlClause": "Personnel cybersecurity requirements must be reviewed periodically.",
-      "controlType": "Mandatory",
-      "subcontrols": []
-    }
-  ]
-}
-,
-
-{
-  "subdomainId": "1-10",
-  "subdomainName": "Cybersecurity Awareness and Training Program",
-  "objective": "To ensure that personnel are aware of their cybersecurity responsibilities and have the essential cybersecurity awareness. It is also to ensure that personnel are provided with the required cybersecurity training, skills and credentials needed to accomplish their cybersecurity responsibilities and to protect the organization’s information and technology assets.",
-  "controls": [
-    {
-      "controlId": "1-10-1",
-      "controlClause": "A cybersecurity awareness program must be developed and approved. The program must be conducted periodically through multiple channels to strengthen the awareness about cybersecurity, cyber threats and risks, and to build a positive cybersecurity awareness culture.",
-      "controlReferenceNumber": "1-10-1",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-2",
-      "controlClause": "The cybersecurity awareness program must be implemented.",
-      "controlReferenceNumber": "1-10-2",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-3.1",
-      "controlClause": "Secure handling of email services, especially phishing emails.",
-      "controlReferenceNumber": "1-10-3.1",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-3.2",
-      "controlClause": "Secure handling of mobile devices and storage media.",
-      "controlReferenceNumber": "1-10-3.2",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-3.3",
-      "controlClause": "Secure Internet browsing.",
-      "controlReferenceNumber": "1-10-3.3",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-3.4",
-      "controlClause": "Secure use of social media.",
-      "controlReferenceNumber": "1-10-3.4",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-4.1",
-      "controlClause": "Cybersecurity function’s personnel must receive essential and customized (i.e., tailored to job functions as it relates to cybersecurity) training and access to professional skillsets.",
-      "controlReferenceNumber": "1-10-4.1",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-4.2",
-      "controlClause": "Personnel working on software/application development and information and technology assets operations must receive essential and customized cybersecurity training.",
-      "controlReferenceNumber": "1-10-4.2",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-4.3",
-      "controlClause": "Executive and supervisory positions must receive essential and customized cybersecurity training.",
-      "controlReferenceNumber": "1-10-4.3",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "1-10-5",
-      "controlClause": "The implementation of the cybersecurity awareness program must be reviewed periodically.",
-      "controlReferenceNumber": "1-10-5",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-
-,
-{
-
-    "domainId": "2",
-  "domainName": "Cybersecurity Defense",
-  "subdomains": [
-
-{
-  "subdomainId": "2-1",
-  "subdomainName": "Asset Management",
-  "objective": "To ensure that the organization has an accurate and detailed inventory of information and technology assets in order to support the organization’s cybersecurity and operational requirements to maintain the confidentiality, integrity and availability of information and technology assets.",
-  "controls": [
-    {
-      "controlId": "2-1-1",
-      "controlReferenceNumber": "2-1-1",
-      "controlClause": "Cybersecurity requirements for managing information and technology assets must be defined, documented and approved.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-1-2",
-      "controlReferenceNumber": "2-1-2",
-      "controlClause": "The cybersecurity requirements for managing information and technology assets must be implemented.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-1-3",
-      "controlReferenceNumber": "2-1-3",
-      "controlClause": "Acceptable use policy of information and technology assets must be defined, documented and approved.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-1-4",
-      "controlReferenceNumber": "2-1-4",
-      "controlClause": "Acceptable use policy of information and technology assets must be implemented.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-1-5",
-      "controlReferenceNumber": "2-1-5",
-      "controlClause": "Information and technology assets must be classified, labeled and handled as per related law and regulatory requirements.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-1-6",
-      "controlReferenceNumber": "2-1-6",
-      "controlClause": "The cybersecurity requirements for managing information and technology assets must be reviewed periodically.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}, 
-{
-  "subdomainId": "2-2",
-  "subdomainName": "Identity and Access Management",
-  "objective": "To ensure the secure and restricted logical access to information and technology assets in order to prevent unauthorized access and allow only authorized accesses for users which are necessary to accomplish assigned tasks.",
-  "controls": [
-    {
-      "controlId": "2-2-1",
-      "controlReferenceNumber": "2-2-1",
-      "controlClause": "Cybersecurity requirements for identity and access management must be defined, documented and approved.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-2-2",
-      "controlReferenceNumber": "2-2-2",
-      "controlClause": "The cybersecurity requirements for identity and access management must be implemented.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-2-3.1",
-      "controlReferenceNumber": "2-2-3.1",
-      "controlClause": "Single-factor authentication based on username and password.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-2-3.2",
-      "controlReferenceNumber": "2-2-3.2",
-      "controlClause": "Multi-factor authentication for remote access, defining suitable authentication factors, number of factors and suitable technique based on the result of impact assessment of authentication failure and bypass for remote access.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-2-3.3",
-      "controlReferenceNumber": "2-2-3.3",
-      "controlClause": "User authorization based on identity and access control principles: Need-to-Know and Need-to-Use, Least Privilege and Segregation of Duties.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-2-3.4",
-      "controlReferenceNumber": "2-2-3.4",
-      "controlClause": "Privileged access management.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-2-3.5",
-      "controlReferenceNumber": "2-2-3.5",
-      "controlClause": "Periodic review of users’ identities and access rights.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-2-4",
-      "controlReferenceNumber": "2-2-4",
-      "controlClause": "The implementation of the cybersecurity requirements for identity and access management must be reviewed periodically.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-},
-
-{
-  "subdomainId": "2-3",
-  "subdomainName": "Information System and Information Processing Facilities Protection",
-  "objective": "To ensure the protection of information systems and information processing facilities (including workstations and infrastructures) against cyber risks.",
-  "controls": [
-    {
-      "controlId": "2-3-1",
-      "controlReferenceNumber": "2-3-1",
-      "controlClause": "Cybersecurity requirements for protecting information systems and information processing facilities must be defined, documented and approved.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-3-2",
-      "controlReferenceNumber": "2-3-2",
-      "controlClause": "The cybersecurity requirements for protecting information systems and information processing facilities must be implemented.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-3-3.1",
-      "controlReferenceNumber": "2-3-3.1",
-      "controlClause": "Advanced, up-to-date and secure management of malware and virus protection on servers and workstations.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-3-3.2",
-      "controlReferenceNumber": "2-3-3.2",
-      "controlClause": "Restricted use and secure handling of external storage media.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-3-3.3",
-      "controlReferenceNumber": "2-3-3.3",
-      "controlClause": "Patch management for information systems, software and devices.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-3-3.4",
-      "controlReferenceNumber": "2-3-3.4",
-      "controlClause": "Centralized clock synchronization with an accurate and trusted source (e.g., Saudi Standards, Metrology and Quality Organization (SASO)).",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-3-4",
-      "controlReferenceNumber": "2-3-4",
-      "controlClause": "The cybersecurity requirements for protecting information systems and information processing facilities must be reviewed periodically.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-,
-
-{
-  "subdomainId": "2-4",
-  "subdomainName": "Email Protection",
-  "objective": "To ensure the protection of email service from cyber risks.",
-  "controls": [
-    {
-      "controlId": "2-4-1",
-      "controlReferenceNumber": "2-4-1",
-      "controlClause": "Cybersecurity requirements for protecting email service must be defined, documented and approved.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-4-2",
-      "controlReferenceNumber": "2-4-2",
-      "controlClause": "The cybersecurity requirements for email service must be implemented.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-4-3.1",
-      "controlReferenceNumber": "2-4-3.1",
-      "controlClause": "Analyzing and filtering email messages (specifically phishing emails and spam) using advanced and up-to-date email protection techniques.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-4-3.2",
-      "controlReferenceNumber": "2-4-3.2",
-      "controlClause": "Multi-factor authentication for remote and webmail access to email service, defining authentication factors, number of factors and suitable technique based on the result of impact assessment of authentication failure and bypass.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-4-3.3",
-      "controlReferenceNumber": "2-4-3.3",
-      "controlClause": "Email archiving and backup.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-4-3.4",
-      "controlReferenceNumber": "2-4-3.4",
-      "controlClause": "Secure management and protection against Advanced Persistent Threats (APT), which normally utilize zero-day viruses and malware.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-4-3.5",
-      "controlReferenceNumber": "2-4-3.5",
-      "controlClause": "Validation of the organization’s email service domains through Haseen platform by using Sender Policy Framework (SPF), Domain Keys Identified Mail (DKIM), and Domain Message Authentication Reporting and Conformance (DMARC).",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "2-4-4",
-      "controlReferenceNumber": "2-4-4",
-      "controlClause": "The cybersecurity requirements for email service must be reviewed periodically.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    }
-  ]
-}
-, 
-
+        subdomainId: "2-3",
+        subdomainName: "Information System and Information Processing Facilities Protection",
+        objective: "To ensure the protection of information systems and information processing facilities (including workstations and infrastructures) against cyber risks.",
+        controls: [
+          { controlId: "2-3-1", controlReferenceNumber: "2-3-1", controlClause: "Cybersecurity requirements for protecting information systems and information processing facilities must be defined, documented and approved.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-3-2", controlReferenceNumber: "2-3-2", controlClause: "The cybersecurity requirements for protecting information systems and information processing facilities must be implemented.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-3-3.1", controlReferenceNumber: "2-3-3.1", controlClause: "Advanced, up-to-date and secure management of malware and virus protection on servers and workstations.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-3-3.2", controlReferenceNumber: "2-3-3.2", controlClause: "Restricted use and secure handling of external storage media.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-3-3.3", controlReferenceNumber: "2-3-3.3", controlClause: "Patch management for information systems, software and devices.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-3-3.4", controlReferenceNumber: "2-3-3.4", controlClause: "Centralized clock synchronization with an accurate and trusted source (e.g., Saudi Standards, Metrology and Quality Organization (SASO)).", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-3-4", controlReferenceNumber: "2-3-4", controlClause: "The cybersecurity requirements for protecting information systems and information processing facilities must be reviewed periodically.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      },
+      {
+        subdomainId: "2-4",
+        subdomainName: "Email Protection",
+        objective: "To ensure the protection of email service from cyber risks.",
+        controls: [
+          { controlId: "2-4-1", controlReferenceNumber: "2-4-1", controlClause: "Cybersecurity requirements for protecting email service must be defined, documented and approved.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-4-2", controlReferenceNumber: "2-4-2", controlClause: "The cybersecurity requirements for email service must be implemented.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-4-3.1", controlReferenceNumber: "2-4-3.1", controlClause: "Analyzing and filtering email messages (specifically phishing emails and spam) using advanced and up-to-date email protection techniques.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-4-3.2", controlReferenceNumber: "2-4-3.2", controlClause: "Multi-factor authentication for remote and webmail access to email service, defining authentication factors, number of factors and suitable technique based on the result of impact assessment of authentication failure and bypass.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-4-3.3", controlReferenceNumber: "2-4-3.3", controlClause: "Email archiving and backup.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-4-3.4", controlReferenceNumber: "2-4-3.4", controlClause: "Secure management and protection against Advanced Persistent Threats (APT), which normally utilize zero-day viruses and malware.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-4-3.5", controlReferenceNumber: "2-4-3.5", controlClause: "Validation of the organization’s email service domains through Haseen platform by using Sender Policy Framework (SPF), Domain Keys Identified Mail (DKIM), and Domain Message Authentication Reporting and Conformance (DMARC).", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" },
+          { controlId: "2-4-4", controlReferenceNumber: "2-4-4", controlClause: "The cybersecurity requirements for email service must be reviewed periodically.", controlType: "Mandatory", complianceLevel: "", remarks: "", correctiveProcedures: "", expectedComplianceDate: "" }
+        ]
+      }, 
 {
   "subdomainId": "2-5",
   "subdomainName": "Networks Security Management",
@@ -1023,9 +296,7 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
-,
-
+},
 {
   "subdomainId": "2-6",
   "subdomainName": "Mobile Devices Security",
@@ -1102,9 +373,7 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
-,
-
+},
 {
   "subdomainId": "2-7",
   "subdomainName": "Data and Information Protection",
@@ -1151,7 +420,8 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
+},
+
 ,
 {
   "subdomainId": "2-8",
@@ -1213,9 +483,7 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
-,
-
+},
 {
   "subdomainId": "2-9",
   "subdomainName": "Backup and Recovery Management",
@@ -1276,9 +544,7 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
-,
-
+},
 {
   "subdomainId": "2-10",
   "subdomainName": "Vulnerabilities Management",
@@ -1348,8 +614,8 @@ window.alldomains = {
     }
   ]
 }
+, 
 ,
-
 {
   "subdomainId": "2-11",
   "subdomainName": "Penetration Testing",
@@ -1406,9 +672,7 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
-,
-
+},
 {
   "subdomainId": "2-12",
   "subdomainName": "Cybersecurity Event Logs and Monitoring Management",
@@ -1477,9 +741,7 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
-,
-
+},
 {
   "subdomainId": "2-13",
   "subdomainName": "Cybersecurity Incident and Threat Management",
@@ -1548,9 +810,7 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
-,
-
+},
 {
   "subdomainId": "2-14",
   "subdomainName": "Physical Security",
@@ -1619,9 +879,7 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-}
-,
-
+},
 {
   "subdomainId": "2-15",
   "subdomainName": "Web Application Security",
@@ -1690,100 +948,104 @@ window.alldomains = {
       "expectedComplianceDate": ""
     }
   ]
-  }
-  ]
 }
 
-,
+
+    ]
+  } , 
+
+  // ,{ domainId: "3", domainName: "...", subdomains: [...] }
+
 
 {
-
   "domainId": "3",
   "domainName": "Cybersecurity Resilience",
-
-
-    "subdomains": [
+  "subdomains": [
+    {
+      "subdomainId": "3-1",
+      "subdomainName": "Cybersecurity Resilience Aspects of Business Continuity Management (BCM)",
+      "objective": "To ensure the inclusion of the cybersecurity resiliency requirements within the organization’s business continuity management and to remediate and minimize the impacts on systems, information processing facilities and critical e-services from disasters caused by cybersecurity incidents.",
+      "controls": [
         {
-  "subdomainId": "3-1",
-  "subdomainName": "Cybersecurity Resilience Aspects of Business Continuity Management (BCM)",
-  "objective": "To ensure the inclusion of the cybersecurity resiliency requirements within the organization’s business continuity management and to remediate and minimize the impacts on systems, information processing facilities and critical e-services from disasters caused by cybersecurity incidents.",
-  "controls": [
-    {
-      "controlId": "3-1-1",
-      "controlReferenceNumber": "3-1-1",
-      "controlClause": "Cybersecurity requirements for business continuity management must be defined, documented and approved.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "3-1-2",
-      "controlReferenceNumber": "3-1-2",
-      "controlClause": "The cybersecurity requirements for business continuity management must be implemented.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "3-1-3",
-      "controlReferenceNumber": "3-1-3",
-      "controlClause": "The cybersecurity requirements for business continuity management must include at least the following:",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "3-1-3.1",
-      "controlReferenceNumber": "3-1-3.1",
-      "controlClause": "Ensuring the continuity of cybersecurity systems and procedures.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "3-1-3.2",
-      "controlReferenceNumber": "3-1-3.2",
-      "controlClause": "Developing response plans for cybersecurity incidents that may affect the business continuity.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "3-1-3.3",
-      "controlReferenceNumber": "3-1-3.3",
-      "controlClause": "Developing disaster recovery plans.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
-    },
-    {
-      "controlId": "3-1-4",
-      "controlReferenceNumber": "3-1-4",
-      "controlClause": "The cybersecurity requirements for business continuity management must be reviewed periodically.",
-      "controlType": "Mandatory",
-      "complianceLevel": "",
-      "remarks": "",
-      "correctiveProcedures": "",
-      "expectedComplianceDate": ""
+          "controlId": "3-1-1",
+          "controlReferenceNumber": "3-1-1",
+          "controlClause": "Cybersecurity requirements for business continuity management must be defined, documented and approved.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "3-1-2",
+          "controlReferenceNumber": "3-1-2",
+          "controlClause": "The cybersecurity requirements for business continuity management must be implemented.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "3-1-3",
+          "controlReferenceNumber": "3-1-3",
+          "controlClause": "The cybersecurity requirements for business continuity management must include at least the following:",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "3-1-3.1",
+          "controlReferenceNumber": "3-1-3.1",
+          "controlClause": "Ensuring the continuity of cybersecurity systems and procedures.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "3-1-3.2",
+          "controlReferenceNumber": "3-1-3.2",
+          "controlClause": "Developing response plans for cybersecurity incidents that may affect the business continuity.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "3-1-3.3",
+          "controlReferenceNumber": "3-1-3.3",
+          "controlClause": "Developing disaster recovery plans.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        },
+        {
+          "controlId": "3-1-4",
+          "controlReferenceNumber": "3-1-4",
+          "controlClause": "The cybersecurity requirements for business continuity management must be reviewed periodically.",
+          "controlType": "Mandatory",
+          "complianceLevel": "",
+          "remarks": "",
+          "correctiveProcedures": "",
+          "expectedComplianceDate": ""
+        }
+      ]
     }
   ]
 }
-]
-}
 ,
 
+  
+  // ,{ domainId: "4", domainName: "...", subdomains: [...] }
+
+,
 {
   "domainId": "4",
   "domainName": "Third-Party and Cloud Computing Cybersecurity",
@@ -1914,11 +1176,14 @@ window.alldomains = {
           "correctiveProcedures": "",
           "expectedComplianceDate": ""
         }
-]
+      ]
+    }
+  ]
 }
-]
-}
-]
-}
+];
 
-        export default alldomains;
+
+window.alldomains = alldomainsArrayYouBuilt;
+
+
+
