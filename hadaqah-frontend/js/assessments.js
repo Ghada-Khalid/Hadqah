@@ -192,6 +192,9 @@ function createControlRow(mainDomain, subdomain, type, ref, clause) {
 function updateProgress() {
   const done = Array.from(document.querySelectorAll('.status-dropdown'))
     .filter(sel => sel.value).length;
+
+ 
+
   const pct = totalControls
     ? Math.round((done / totalControls) * 100)
     : 0;
@@ -414,11 +417,11 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Assessments page loading...');
   
   // Check if we have the required dependencies
-  if (typeof window.ALL_DOMAINS === 'undefined') {
+ /*  if (typeof window.ALL_DOMAINS === 'undefined') {
     console.error('ALL_DOMAINS not loaded');
     showError('Control data failed to load. Please refresh the page.');
     return;
-  }
+  } */
   
   try {
     initAssessment();

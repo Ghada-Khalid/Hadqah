@@ -240,7 +240,11 @@ function updateChartsWithFixedSizing(overall, domains) {
             overall.missing || 0,
             overall.na || 0
           ],
-          backgroundColor: ['#28a745', '#ffc107', '#dc3545', '#6c757d'],
+          backgroundColor: ['#1b929e',  // Implemented
+        '#5dc3cb',  // Partially Implemented
+        '#7b9dad',  // Not Implemented
+        '#c3efec'   // Not Applicable
+        ],
           borderWidth: 2,
           borderColor: '#fff'
         }]
@@ -302,7 +306,9 @@ function updateChartsWithFixedSizing(overall, domains) {
             const implemented = d.implemented || 0;
             return total ? Math.round((implemented / total) * 100) : 0;
           }),
-          backgroundColor: '#28a745',
+          backgroundColor: 
+           '#1b929e'
+          ,
           borderColor: '#1e7e34',
           borderWidth: 1,
           borderRadius: 4,
