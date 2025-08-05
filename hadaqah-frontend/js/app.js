@@ -1,91 +1,66 @@
 
-        // API Client Configuration
-        class APIClient {
-            constructor() {
-                this.baseURL = 'http://localhost:5000/api'; // عنوان الباك إند الخاص بك
-                this.token = localStorage.getItem('token') || null;
-            }
+// API client
+class APIClient {
+  constructor() {
+    this.baseURL = 'http://localhost:5000/api'
+    this.token   = localStorage.getItem('token')
+  }
 
-            async request(endpoint, options = {}) {
-                const url = `${this.baseURL}${endpoint}`;
-                const config = {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        ...options.headers,
-                    },
-                    ...options,
-                };
+  async request(endpoint, options = {}) {
+    const url    = this.baseURL + endpoint
+    const config = {
+      headers: { 'Content-Type': 'application/json', ...options.headers },
+      ...options
+    }
+    if (this.token) config.headers.Authorization = `Bearer ${this.token}`
+    const res = await fetch(url, config)
+    if (!res.ok) throw new Error((await res.json()).message || res.statusText)
+    return res.json()
+  }
 
-                if (this.token) {
-                    config.headers.Authorization = `Bearer ${this.token}`;
-                }
+  // split out your two stats endpoints
+  getOverallStats() { return this.request('/assessments/stats/overall') }
+  getDomainStats()  { return this.request('/assessments/stats/domain')  }
+}
+const api = new APIClient()
 
-                try {
-                    const response = await fetch(url, config);
-                    
-                    if (!response.ok) {
-                        const error = await response.json();
-                        throw new Error(error.message || 'Request failed');
-                    }
+// front-end loader
+async function loadDashboardData() {
+  try {
+    const [overall, domains] = await Promise.all([
+      api.getOverallStats(),
+      api.getDomainStats()
+    ])
+    updateDashboardStats(overall, domains)
+  } catch (err) {
+    console.error('Dashboard load failed:', err)
+    showNotification('Couldn’t load dashboard', 'error')
+  }
+}
 
-                    return await response.json();
-                } catch (error) {
-                    console.error('API Error:', error);
-                    throw error;
-                }
-            }
+function updateDashboardStats(overall, domains) {
+  // overall = { total, implemented, partially, missing, na }
+  document.getElementById('total-controls').textContent      = overall.total
+  document.getElementById('implemented-count').textContent   = overall.implemented
+  document.getElementById('partially-count').textContent     = overall.partially
+  document.getElementById('missing-count').textContent       = overall.missing
+  document.getElementById('na-count').textContent            = overall.na
+  document.getElementById('overall-pct').textContent         =
+    `${Math.round(overall.implemented / overall.total * 100)}%`
 
-            async getDashboardStats() {
-                return await this.request('/dashboard/stats');
-            }
+  // domains is an array [ { domainName, implemented, partially, missing, na, total, pct }, … ]
+  domains.forEach(d => {
+    const card   = document.querySelector(`#domain-card-${d.domainId}`)
+    const pct    = d.pct + '%'
+    card.querySelector('.domain-completed').textContent = d.implemented
+    card.querySelector('.domain-total').textContent     = d.total
+    card.querySelector('.domain-pct').textContent       = pct
+    card.querySelector('.domain-bar').style.width       = pct
+  })
+}
 
-            async getECCControls() {
-                return await this.request('/controls');
-            }
-
-            async runGapAnalysis() {
-                return await this.request('/gap-analysis', { method: 'POST' });
-            }
-
-            async generateReport(reportType) {
-                return await this.request('/reports/generate', {
-                    method: 'POST',
-                    body: JSON.stringify({ type: reportType }),
-                });
-            }
-        }
-
-        const api = new APIClient();
-
-        // Load dashboard data
-        async function loadDashboardData() {
-            try {
-                const stats = await api.getDashboardStats();
-                updateDashboardStats(stats);
-            } catch (error) {
-                console.error('Failed to load dashboard data:', error);
-                // Handle error - show notification or fallback data
-            }
-        }
-
-        // Update dashboard statistics
-        function updateDashboardStats(stats) {
-            const statValues = document.querySelectorAll('.stat-value');
-            const progressBars = document.querySelectorAll('.progress-fill');
-            
-            if (stats) {
-                statValues[0].textContent = stats.totalControls || 90;
-                statValues[1].textContent = stats.compliantControls || 67;
-                statValues[2].textContent = stats.gapsIdentified || 18;
-                statValues[3].textContent = stats.criticalIssues || 5;
-
-                // Update progress bars
-                progressBars[0].style.width = '100%';
-                progressBars[1].style.width = `${(stats.compliantControls / stats.totalControls) * 100}%`;
-                progressBars[2].style.width = `${(stats.gapsIdentified / stats.totalControls) * 100}%`;
-                progressBars[3].style.width = `${(stats.criticalIssues / stats.totalControls) * 100}%`;
-            }
-        }
+// kick off on load
+document.addEventListener('DOMContentLoaded', loadDashboardData)
 
         // Navigation functionality
         document.querySelectorAll('.nav-item').forEach(item => {
@@ -195,24 +170,6 @@
             } catch (error) {
                 hideLoader();
                 showNotification('Failed to run gap analysis', 'error');
-            }
-        }
-
-        // Generate Report
-        async function generateReport() {
-            try {
-                showLoader('Generating report...');
-                const report = await api.generateReport('compliance');
-                hideLoader();
-                
-                // Download the report
-                const blob = await api.downloadReport(report.id);
-                downloadFile(blob, `compliance-report-${new Date().toISOString().split('T')[0]}.pdf`);
-                
-                showNotification('Report generated successfully!', 'success');
-            } catch (error) {
-                hideLoader();
-                showNotification('Failed to generate report', 'error');
             }
         }
 
@@ -744,6 +701,52 @@ document.querySelector('.action-btn i.fa-sync-alt')
     loadAssessmentResults();
   });
 
+async function loadDashboardStats() {
+  try {
+    const [overallRes, domainRes] = await Promise.all([
+      fetch('/api/assessments/stats/overall'),
+      fetch('/api/assessments/stats/domain')
+    ]);
+    const overall = await overallRes.json();
+    const domains = await domainRes.json();
+
+    // populate your stat cards and charts here...
+  } catch (err) {
+    console.error('Dashboard load error:', err);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', loadDashboardStats);
+
 
   // run on page load
   document.addEventListener('DOMContentLoaded', loadDashboard);
+// hadaqah-frontend/js/dashboard.js
+
+// 1) call your API to make a new session
+async function createNewSession() {
+  const resp = await fetch('/api/assessment-sessions', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify({ /* any payload your API needs */ })
+  });
+  if (!resp.ok) throw new Error('Failed to create session');
+  return resp.json();  // { _id: "...", name: "My session name" }
+}
+
+// 2) wire up your button
+document.getElementById('newAssessmentBtn')
+  .addEventListener('click', async () => {
+    try {
+      const session = await createNewSession();
+      // redirect with a real MongoDB _id (string) and the name
+      window.location.href = `/assessments.html?sessionId=${session._id}&name=${encodeURIComponent(session.name)}`;
+    } catch (err) {
+      alert('Could not start a new assessment: ' + err.message);
+    }
+  });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+  loadDashboardData();
+});

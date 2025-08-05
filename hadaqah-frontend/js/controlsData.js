@@ -1,6 +1,4 @@
-// /scripts/Alldomains.js
-
-window.alldomains = [
+const ALL_DOMAINS = [
   {
     domainId: "1",
     domainName: "Cybersecurity Governance",
@@ -105,10 +103,9 @@ window.alldomains = [
       }
     ]
   }
-
   // ,{ domainId: "2", domainName: "...", subdomains: [...] }
-  
   ,
+
   {
     domainId: "2",
     domainName: "Cybersecurity Defense",
@@ -615,7 +612,7 @@ window.alldomains = [
   ]
 }
 , 
-,
+
 {
   "subdomainId": "2-11",
   "subdomainName": "Penetration Testing",
@@ -1040,7 +1037,7 @@ window.alldomains = [
     }
   ]
 }
-,
+
 
   
   // ,{ domainId: "4", domainName: "...", subdomains: [...] }
@@ -1180,10 +1177,13 @@ window.alldomains = [
     }
   ]
 }
-];
+   ]; 
+   
 
-
-window.alldomains = alldomainsArrayYouBuilt;
-
-
-
+// Make available in both browser and Node.js
+if (typeof window !== 'undefined') {
+  window.ALL_DOMAINS = ALL_DOMAINS;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = ALL_DOMAINS;
+}

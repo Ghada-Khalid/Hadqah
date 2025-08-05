@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ECC-2:2024 Assessment – Hadaqah</title>
-
-  <!-- your global styles + FontAwesome -->
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css" />
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     rel="stylesheet"
-  >
+  />
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="header">
     <div class="header-content">
       <div class="logo">
-        <i class="fas fa-shield-alt logo-icon"></i>
+        <div class="logo-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
         <div class="logo-text">
           <h1>Hadaqah</h1>
           <p>ECC-2:2024 Compliance Assistant</p>
@@ -31,7 +31,7 @@
     </div>
   </header>
 
-  <!-- NAV -->
+  <!-- Navigation -->
   <nav class="nav-container">
     <div class="nav">
       <a href="/index.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
@@ -43,42 +43,53 @@
     </div>
   </nav>
 
-  <!-- PAGE HEADER -->
+  <!-- Page Header -->
   <div class="page-header">
     <div class="header-info">
-      <h1>Assessment: <span id="assessmentName">Loading…</span></h1>
-<!-- REAL-TIME PROGRESS -->
-<section id="assessment-progress" style="margin:1rem 0">
-  <p id="progress-text">
-    0 of <span id="progress-total">127</span> controls completed (<span id="progress-percent">0%</span>)
-  </p>
-  <div class="progress-container">
-    <div id="progress-bar" class="progress-bar"></div>
-  </div>
-</section>
+      <h1>
+        Assessment:
+        <span id="assessmentName">Loading…</span>
+      </h1>
 
-</div>
+      <!-- REAL-TIME PROGRESS -->
+      <section id="assessment-progress" style="margin:1rem 0">
+        <p id="progress-text">
+          0 of 0 controls completed (0%)
+        </p>
+        <div class="progress-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      </section>
+    </div>
+
     <div class="actions">
-<button
-  id="saveBtn"
-  class="save-btn"
-  onclick="saveAssessment()"
-  disabled
->
-  Save 0 Assessments
-</button>
-
+      <button id="saveBtn" class="save-btn" disabled>
+        Save 0 Assessments
+      </button>
+      <button id="updateBtn" class="save-btn" style="display:none; margin-left: 10px;">
+        Update Assessment
+      </button>
+      <button class="action-btn" onclick="window.location.href='/index.html'" style="margin-left: 10px;">
+        <i class="fas fa-tachometer-alt"></i> Go to Dashboard
+      </button>
     </div>
   </div>
 
-
-
-  <!-- MAIN -->
   <main class="main-container">
     <div id="errorMessage" class="error" style="display:none;"></div>
-    <div id="loadingMessage" class="loading">Loading assessment controls…</div>
+    <div id="successMessage" class="success" style="display:none;"></div>
 
-    <div id="assessmentTable" class="assessment-table" style="display:none;">
+    <!-- loader -->
+    <div id="loadingMessage" class="loading">
+      Loading assessment controls…
+    </div>
+
+    <!-- table (hidden until JS swaps loader out) -->
+    <div
+      id="assessmentTable"
+      class="assessment-table"
+      style="display:none;"
+    >
       <div class="table-header">
         <div>Main Domain</div>
         <div>Subdomain</div>
@@ -94,14 +105,17 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-bottom">
       <p>&copy; 2024 Hadaqah – ECC-2:2024 Compliance Assistant</p>
     </div>
   </footer>
-  
-<script src="/js/assessments.js"></script>
+
+  <!-- load the data first -->
+  <script src="/js/controlsData.js"></script>
+
+  <!-- then load your logic (deferred so it waits for the DOM & data) -->
+  <script src="/js/assessments.js" defer></script>
 
 </body>
 </html>
